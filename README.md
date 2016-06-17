@@ -12,7 +12,7 @@ Step 2)
 Step 3)
 	composer install
 
-Step 4 (if you get file_put_contents() permission denied) for Mac
+Step 4 (if you get file_put_contents() permission denied) for Mac:
 Fix permissions:
 	echo “Fixing folder permissions…” && sudo find . -type d -exec chmod 0755 {} \; && echo “Successfully fixed folder permissions \n Fixing file permissions.” && sudo find . -type f -exec chmod 0644 {} \; && echo “Successfully fixed file permissions. \n Fixing storage permissions…” && sudo chmod -R 777 storage && echo “Successfully fixed permissions \n Clearing application cache to register new permissions…” && php artisan cache:clear
 
