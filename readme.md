@@ -1,27 +1,29 @@
-# Laravel PHP Framework
+# laravel-froala-example
+Laravel 5.2 Froala Implementation
+	
+This is the example for my articles on Using Froala to Upload Images with Laravel 5.2 and Using Froala Image Manager with Laravel 5.2.
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Step 1)
+	git clone https://github.com/JoshuaBedford/laravel-froala-example.git
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Step 2)
+	cd laravel-froala-example
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Step 3)
+	composer install
 
-## Official Documentation
+Step 4 (if you get file_put_contents() permission denied) for Mac
+Fix permissions:
+	echo “Fixing folder permissions…” && sudo find . -type d -exec chmod 0755 {} \; && echo “Successfully fixed folder permissions \n Fixing file permissions.” && sudo find . -type f -exec chmod 0644 {} \; && echo “Successfully fixed file permissions. \n Fixing storage permissions…” && sudo chmod -R 777 storage && echo “Successfully fixed permissions \n Clearing application cache to register new permissions…” && php artisan cache:clear
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Step 5)
+	create database
 
-## Contributing
+Step 6)
+	create .env file and connect to database
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Step 7)
+	php artisan migrate
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Step 8)
+	Enjoy!
