@@ -25,17 +25,26 @@
         // Replace the <textarea id="body"> and <textarea id="excerpt"> with a Froala
         // instance.
         $('#body, #excerpt').froalaEditor({
-          toolbarButtons: ['undo', 'redo', 'html', '-', 'fontSize', 'paragraphFormat', 'align', 'quote', '|', 'formatOL', 'formatUL', '|', 'bold', 'italic', 'underline', '|', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable'],
-          heightMin: 300,
-          imageMove: true,
-          imageUploadParam: 'image',
-          imageUploadMethod: 'post',
-          // Set the image upload URL.
-          imageUploadURL: '/files/post',
-          imageUploadParams: {
-            location: 'images', // This allows us to distinguish between Froala or a regular file upload.
-            _token: "{{ csrf_token() }}" // This passes the laravel token with the ajax request.
-          }
+            toolbarButtons: ['undo', 'redo', 'html', '-', 'fontSize', 'paragraphFormat', 'align', 'quote', '|', 'formatOL', 'formatUL', '|', 'bold', 'italic', 'underline', '|', 'insertLink', 'insertImage', 'insertTable'],
+            heightMin: 300,
+            imageMove: true,
+            imageUploadParam: 'image',
+            imageUploadMethod: 'post',
+            // Set the image upload URL.
+            imageUploadURL: '/files/post',
+            imageUploadParams: {
+                location: 'images', // This allows us to distinguish between Froala or a regular file upload.
+                _token: "{{ csrf_token() }}" // This passes the laravel token with the ajax request.
+            },
+            // URL to get all department images from
+            imageManagerLoadURL: '/fileuploads',
+            // Set the delete image request URL.
+            imageManagerDeleteURL: "/fileuploads",
+            // Set the delete image request type.
+            imageManagerDeleteMethod: "DELETE",
+            imageManagerDeleteParams: {
+                _token: "{{ csrf_token() }}"
+            }
         });
     </script>
 @stop
