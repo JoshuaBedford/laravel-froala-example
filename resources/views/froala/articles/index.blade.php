@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.froala')
 
 @section('content')
     <div class="content">
@@ -6,7 +6,7 @@
         <div class="list">
             <ul class="articles">
                 @foreach($articles as $article)
-                    <li><a href="{{ url('/articles/' . $article->id) }}" class="title">{{ $article->title }}</a> | <a href="{{ url('/articles/' . $article->id . "/edit") }}">edit</a></li>
+                    <li><a href="{{ url('/froala/articles/' . $article->id) }}" class="title">{{ $article->title }}</a> | <a href="{{ url('/froala/articles/' . $article->id . "/edit") }}">edit</a></li>
                 @endforeach
             </ul>
         </div>

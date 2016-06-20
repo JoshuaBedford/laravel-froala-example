@@ -1,10 +1,10 @@
-@extends('layouts.main')
+@extends('layouts.froala')
 
 @section('content')
     <div class="content">
         <div class="title">Create Article</div>
         <div class="form">
-            {{ Form::open(['action' => 'ArticlesController@store', 'method' => 'POST']) }}
+            {{ Form::open(['action' => 'Froala\ArticlesController@store', 'method' => 'POST']) }}
                 {{ Form::label('Title') }}<br />
                 {{ Form::text('title', null, ['placeholder' => 'Article Title']) }}<br />
 
@@ -22,8 +22,8 @@
 
 @section('scripts')
     <script>
-        // Replace the <textarea id="body"> with a Froala
-        // instance, using default configuration.
+        // Replace the <textarea id="body"> and <textarea id="excerpt"> with a Froala
+        // instance.
         $('#body, #excerpt').froalaEditor({
             toolbarButtons: ['undo', 'redo', 'html', '-', 'fontSize', 'paragraphFormat', 'align', 'quote', '|', 'formatOL', 'formatUL', '|', 'bold', 'italic', 'underline', '|', 'insertLink', 'insertImage', 'insertTable'],
             heightMin: 300,

@@ -15,9 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/files/post', 'FileUploadsController@store');
-// Route::get('/files', 'FileUploadsController@index');
-Route::DELETE('/fileuploads', 'FileUploadsController@destroy');
+Route::post('/files/post', 'Froala\FileUploadsController@store');
+Route::get('/froala', 'Froala\ArticlesController@index');
+// Route::get('/files', 'Froala\FileUploadsController@index');
+Route::DELETE('/fileuploads', 'Froala\FileUploadsController@destroy');
 
-Route::resource('/articles', 'ArticlesController');
-Route::resource('/fileuploads', 'FileUploadsController');
+Route::resource('/froala/articles', 'Froala\ArticlesController');
+Route::resource('/fileuploads', 'Froala\FileUploadsController');

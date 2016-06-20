@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Froala;
+
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\FileUpload;
+
+use App\Models\Froala\FileUpload;
 
 class FileUploadsController extends Controller
 {

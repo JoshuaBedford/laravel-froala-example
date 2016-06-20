@@ -1,5 +1,7 @@
 # laravel-froala-example
 Laravel 5.2 Froala Implementation
+
+Use working example here: http://froala.thelightmedia.net/articles
 	
 This is the example for my articles on Using Froala to Upload Images with Laravel 5.2 and Using Froala Image Manager with Laravel 5.2.
 

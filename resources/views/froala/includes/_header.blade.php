@@ -5,7 +5,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet" type="text/css">
 
-        @include('includes/_froala-css')
+        @include('froala/includes/_froala-css')
 
         <style>
             html, body {

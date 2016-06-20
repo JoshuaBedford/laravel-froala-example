@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Froala;
+
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Article;
+use App\Models\Froala\Article;
 
 class ArticlesController extends Controller
 {
@@ -16,7 +18,7 @@ class ArticlesController extends Controller
 	 */
 	public function index(){
 		$articles = Article::get();
-		return view('articles.index', compact('articles'));
+		return view('froala.articles.index', compact('articles'));
 	}
 
 	/**
@@ -25,7 +27,7 @@ class ArticlesController extends Controller
 	 */
 	public function show($id){
 		$article = Article::findOrFail($id);
-		return view('articles.show', compact('article'));
+		return view('froala.articles.show', compact('article'));
 	}
 
 	/**
@@ -33,7 +35,7 @@ class ArticlesController extends Controller
 	 * @return view return blade view index.
 	 */
 	public function create(){
-		return view('articles.create');
+		return view('froala.articles.create');
 	}
 
 	/**
@@ -45,7 +47,7 @@ class ArticlesController extends Controller
 		$article = new Article;
 		$article->fill($request->all());
 		if($article->save()){
-			return redirect('/articles');
+			return redirect('/froala/articles');
 		}
 	}
 
@@ -55,7 +57,7 @@ class ArticlesController extends Controller
 	 */
 	public function edit($id){
 		$article = Article::findOrFail($id);
-		return view('articles.edit', compact('article'));
+		return view('froala.articles.edit', compact('article'));
 	}
 
 	/**
@@ -66,7 +68,7 @@ class ArticlesController extends Controller
 		$article = Article::findOrFail($id);
 		$article->fill($request->all());
 		if($article->save()){
-			return redirect('/articles');
+			return redirect('/froala/articles');
 		}
 	}
 }
