@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content">
-        <div class="title">Create Article</div>
+        <div class="title">Articles</div>
         <div class="list">
             <ul class="articles">
                 @foreach($articles as $article)

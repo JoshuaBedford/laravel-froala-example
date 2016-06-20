@@ -5,7 +5,7 @@
 			<ul>
 				<li><a href="{{ url('/articles') }}">Home</a></li>
 				<li><a href="{{ url('/articles/create') }}">Create</a></li>
-				<li><a href="">Github</a></li>
+				<li><a href="{{ url('https://github.com/JoshuaBedford/laravel-froala-example') }}">Github</a></li>
 			</ul>
 		</div>
 	    <div class="container">
