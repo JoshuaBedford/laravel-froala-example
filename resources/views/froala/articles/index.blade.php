@@ -3,6 +3,7 @@
 @section('content')
     <div class="content">
         <div class="title">Articles</div>
+        <div class="subtitle">Deleted Daily (11:15 AM CST)</div>
         <div class="list">
             <ul class="articles">
                 @foreach($articles as $article)
