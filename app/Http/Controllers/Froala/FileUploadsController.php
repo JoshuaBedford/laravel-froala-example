@@ -38,21 +38,21 @@ class FileUploadsController extends Controller
     	$input 				= $request->all();
     	$location 			= $input['location'];
 
-		$fileData 			= $request->file('file'); //this gets the file data for 1st argument
+		$fileData 			= $request->file('image'); //this gets the image data for 1st argument
         // $filename 			= $fileData->getClientOriginalName();
-        $filename           = $_FILES['file']['name'];
+        $filename           = $_FILES['image']['name'];
         // $completePath 		= url('/' . $location . '/' . $filename);
         $destinationPath 	= 'images/';
-        $request->file('file')->move($destinationPath, $filename);
+        $request->file('image')->move($destinationPath, $filename);
 		$completePath = url('/' . $destinationPath . $filename);
 
 		$fileupload = new FileUpload;
 		$fileupload->title = $filename;
 		$fileupload->path = $completePath;
-		
-		if($fileupload->save()){
+		$fileupload->save();
+		// if($fileupload->save()){
 			return stripslashes(response()->json(['link' => $completePath])->content());
-		}
+		// }
 	}
 
 	/**

@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::post('/files/post', 'Froala\FileUploadsController@store');
 Route::get('/froala', 'Froala\ArticlesController@index');
 // Route::get('/files', 'Froala\FileUploadsController@index');
-Route::DELETE('/fileuploads', 'Froala\FileUploadsController@destroy');
+Route::DELETE('/fileuploads', 'FileUploadsController@destroy');
 
 Route::resource('/froala/articles', 'Froala\ArticlesController');
 Route::resource('/fileuploads', 'Froala\FileUploadsController');
